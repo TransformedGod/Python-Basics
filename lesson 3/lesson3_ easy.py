@@ -27,8 +27,8 @@ x = int(input("Введите число: "))
 y = int(input("Еще одно: "))
 z = int(input("И еще одно: "))
 
-func = lambda x, y, z: max(x, y, z)
-print(func(x, y, z))
+func = list(lambda x, y, z: max(x, y, z))
+print(func)
 
 
 #3
