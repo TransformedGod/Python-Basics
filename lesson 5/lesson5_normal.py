@@ -40,7 +40,17 @@ def menu():
             func.view_dir()
 
         if answer == 3:
-            func.view_dir()
+            try:
+                path = input("Введите путь к папке: ")
+                func.del_dir(path)
+                print("Успешно! Папка удалена!)
+            except FileNotFoundError:
+                print("Нет такой папки!")
+                continue
+
+        # if answer == 4:
+        #     path = input("Введите путь к папке: ")
+        #     func.del_dir(path)
 
 
         if answer == 5:

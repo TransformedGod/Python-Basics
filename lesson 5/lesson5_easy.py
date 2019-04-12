@@ -18,7 +18,7 @@ for i in remove:
 
 #для нормала:
 
-def del_dir(path)
+def del_dir(path):
     os.rmdir(path)
 
 # Задача-2:
