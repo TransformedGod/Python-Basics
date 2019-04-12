@@ -35,7 +35,11 @@ for i in path:
 def del_dir(path):
     os.rmdir(path)
 
-
+for i in path:
+    try:
+       del_dir(i)
+    except NameError:
+        print("Папки не найдены!")
 
 # Задача-2:
 # Напишите скрипт, отображающий папки текущей директории.
