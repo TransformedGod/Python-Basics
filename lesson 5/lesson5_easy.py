@@ -31,7 +31,6 @@ for i in path:
 #         os.rmdir(i)
 
 #для нормала:
-
 def del_dir(path):
     os.rmdir(path)
 
@@ -53,10 +52,10 @@ def view_dir():
 # Задача-3:
 # Напишите скрипт, создающий копию файла, из которого запущен данный скрипт.
 
-# import shutil
-#
-# file = os.path.basename(__file__)
-# new_file, ex = file.split('.')
-#
-# if __name__ == "__main__":
-#     shutil.copy(file, new_file + "_new" + "." + ex)
+import shutil
+
+file = os.path.basename(__file__)
+new_file, ex = file.split('.')
+
+if __name__ == "__main__":
+    shutil.copy(file, new_file + "_new" + "." + ex)
