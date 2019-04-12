@@ -11,6 +11,10 @@ for i in range(1,10):
     except FileExistsError:
         pass
 
+#для нормала:
+def cr_dir(path):
+    os.mkdir(path)
+
 remove = os.listdir()
 for i in remove:
     if i.startswith("dir_"):

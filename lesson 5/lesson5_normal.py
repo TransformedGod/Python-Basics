@@ -43,14 +43,19 @@ def menu():
             try:
                 path = input("Введите путь к папке: ")
                 func.del_dir(path)
-                print("Успешно! Папка удалена!)
+                print("Успешно! Папка удалена!")
             except FileNotFoundError:
                 print("Нет такой папки!")
                 continue
 
-        # if answer == 4:
-        #     path = input("Введите путь к папке: ")
-        #     func.del_dir(path)
+        if answer == 4:
+            try:
+                path = input("Введите путь к новой папке: ")
+                func.cr_dir(path)
+                print("Успешно! Папка создана!")
+            except FileExistsError:
+                print("Такая папка уже есть!")
+                continue
 
 
         if answer == 5:
