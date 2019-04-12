@@ -16,14 +16,19 @@ for i in remove:
     if i.startswith("dir_"):
         os.rmdir(i)
 
+#для нормала:
+
+def del_dir(path)
+    os.rmdir(path)
 
 # Задача-2:
 # Напишите скрипт, отображающий папки текущей директории.
 
-list_dir = os.listdir()
-for i in list_dir:
-    if os.path.isdir(i):
-        print(i)
+def view_dir():
+    list_dir = os.listdir()
+    for i in list_dir:
+        if os.path.isdir(i):
+            print(i)
 
 # Задача-3:
 # Напишите скрипт, создающий копию файла, из которого запущен данный скрипт.
