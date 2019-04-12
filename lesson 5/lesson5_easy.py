@@ -18,7 +18,10 @@ def cr_dir(path):
 path = ["dir_" + str(i) for i in range(1,10)]
 
 for i in path:
-    cr_dir(i)
+    try:
+       cr_dir(i)
+    except FileExistsError:
+        pass
 
 
 
@@ -31,6 +34,8 @@ for i in path:
 
 def del_dir(path):
     os.rmdir(path)
+
+
 
 # Задача-2:
 # Напишите скрипт, отображающий папки текущей директории.
