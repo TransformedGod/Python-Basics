@@ -5,20 +5,27 @@
 
 import os
 
-for i in range(1,10):
-    try:
-        os.mkdir("dir_" + str(i))
-    except FileExistsError:
-        pass
+# for i in range(1,10):
+#     try:
+#         os.mkdir("dir_" + str(i))
+#     except FileExistsError:
+#         pass
 
 #для нормала:
 def cr_dir(path):
     os.mkdir(path)
 
-remove = os.listdir()
-for i in remove:
-    if i.startswith("dir_"):
-        os.rmdir(i)
+path = ["dir_" + str(i) for i in range(1,10)]
+
+for i in path:
+    cr_dir(i)
+
+
+
+# remove = os.listdir()
+# for i in remove:
+#     if i.startswith("dir_"):
+#         os.rmdir(i)
 
 #для нормала:
 
@@ -37,10 +44,10 @@ def view_dir():
 # Задача-3:
 # Напишите скрипт, создающий копию файла, из которого запущен данный скрипт.
 
-import shutil
-
-file = os.path.basename(__file__)
-new_file, ex = file.split('.')
-
-if __name__ == "__main__":
-    shutil.copy(file, new_file + "_new" + "." + ex)
+# import shutil
+#
+# file = os.path.basename(__file__)
+# new_file, ex = file.split('.')
+#
+# if __name__ == "__main__":
+#     shutil.copy(file, new_file + "_new" + "." + ex)
