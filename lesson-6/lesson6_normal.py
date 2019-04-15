@@ -11,26 +11,57 @@
 # Вам надо описать игровой цикл так же через класс.
 # Создайте экземпляры классов, проведите бой. Кто будет атаковать первым оставляю на ваше усмотрение.
 
+import random
+
 class Person:
-   def __init__(self, name, health, damage, armor):
-       self.name = name
+    def __init__(self, name = "Orig", health = 10, damage = 5, armor = 5):
+        self.name = name
         self.health = health
         self.damage = damage
         self.armor = armor
 
-    def attack(self, enemy_health, enemy_armor):
-        attack = enemy_health - (self.damage - enemy_armor)
-        return attack
+    def _calculate(self, other):
+        cl_damage = (self.damage - other.armor)
+        return cl_damage
+
+    def attack(self, other):
+        calc_damage = self._calculate(other)
+        other.health = other.health - calc_damage
+
 
 
 class Player(Person):
-    pass
+    def __init__(self, name = "Any", health = 100, damage = 20, armor = 5):
+        super().__init__(Person)
+        self.name = name
+        self.health = health
+        self.damage = damage
+        self.armor = armor
 
 class Enemy(Person):
-    pass
+    def __init__(self, name = "Some", health = 100, damage = 15, armor = 10):
+        super().__init__(Person)
+        self.name = name
+        self.health = health
+        self.damage = damage
+        self.armor = armor
+
+player = Player('Игрок')
+enemy = Enemy('Враг')
 
 class Fight:
-    def first_attack(self, player, enemy):
+    while enemy.health > 0 and player.health > 0:
+        if random.randrange(1, 3) % 2 == 0:
+            player.attack(enemy)
+        else:
+            enemy.attack(player)
+
+    print("Победил " + player.name if player.health > 0 else "Победил " + enemy.name)
 
 
-player = Player()
+
+
+
+
+
+
